@@ -1,6 +1,7 @@
 
+//! Unfinished
 
-List<String> l = ["a","abcd","cdae"];
+List<String> l = ["ab","abcd","cdabe"];
 
 void main(List<String> args) {
   print(commonLetters(l.toSet()));

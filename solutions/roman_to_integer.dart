@@ -1,20 +1,9 @@
-Map<String,int> romanAndInt = {
-  "XII": 12,
-  "DCLI": 651,
-  "DCLXVI": 666,
-  "CXXVII": 127,
-  "CCLXXXVII": 287,
-  "CXXXV": 135,
-  "LXXVI": 76,
-  "DCXI": 611,
-  "CMLVI": 956,
-  "DCCXXVIII": 728,
-};
+
+// https://leetcode.com/problems/roman-to-integer/
+
 
 void main(List<String> args) {
-  romanAndInt.keys.forEach((element) {
-    print(" fonksiyon : ${romanNumberToInt(element)} , excepted : ${romanAndInt[element]}  , ${romanNumberToInt(element) == romanAndInt[element]}");
-  });
+  print(romanNumberToInt("XII"));
 }
 
 Map<String, int> romanNumbers = {

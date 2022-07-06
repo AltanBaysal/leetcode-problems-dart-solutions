@@ -1,3 +1,4 @@
+
 // https://leetcode.com/problems/valid-parentheses/
 
 void main(List<String> args) {
@@ -9,6 +10,30 @@ Map<String, String> brackets = {
   "}": "{",
   "]": "[",
 };
+
+
+bool isValid(String s){
+  List<String> openingBrackets = [];
+  for(int i = 0 ; i<s.length ; i++ ){
+    String char = s[i];
+    if(brackets.containsKey(char)){
+      if(openingBrackets.isEmpty)return false;
+      if(openingBrackets.last != brackets[char]) return false;
+      openingBrackets.removeLast();
+    }else{
+      openingBrackets.add(char);
+    }
+  }
+  return openingBrackets.isEmpty;
+}
+
+
+
+
+
+/*
+// Previous Solution
+
 
 bool isValid(String s){
   Brackets? bracket = bracketsBuilder(s);
@@ -57,43 +82,4 @@ class Brackets {
     return !childBrackets.map<bool>((e) => e.isValid).contains(false);
   }
 }
-
-/*
-List<String> example = [
-  "()[]{}",
-  "(]",
-];
-
-void main(List<String> args) {
-  example.forEach((element) {
-    print(isValid(element));
-  });
-}
-
-Map<String,String> brackets = {
-  ")":"(",
-  "}":"{",
-  "]":"[",
-};
-
-bool isValid(String s){
-  List<String> openingBracket = [];
-
-  for(int i = 0; i < s.length ; i++){
-    String currentBracket = s[i];
-    if(brackets.containsValue(currentBracket)){
-      openingBracket.add(currentBracket);
-    }else{
-      if(brackets[currentBracket] == openingBracket.last){
-        openingBracket.removeLast();
-      }
-      else{
-        return false;
-      }
-    }
-  }
-
-  return openingBracket.isEmpty;
-}
 */
-
