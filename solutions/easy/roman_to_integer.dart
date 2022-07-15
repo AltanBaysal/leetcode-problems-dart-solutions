@@ -18,16 +18,16 @@ Map<String, int> romanNumbers = {
 
 int romanNumberToInt(String romanNumberString) {
   if (romanNumberString.length == 1) {
-    return romanNumbers[romanNumberString[0]] ?? double.negativeInfinity.toInt();
+    return romanNumbers[romanNumberString]!;
   }
    
   else {
     int result = 0;
 
-    int previousNumber =romanNumbers[romanNumberString[0]] ?? double.negativeInfinity.toInt();
+    int previousNumber =romanNumbers[romanNumberString[0]]!;
 
     for (int i = 1; i < romanNumberString.length; i++) {
-      int currentNumber =romanNumbers[romanNumberString[i]] ?? double.negativeInfinity.toInt();
+      int currentNumber =romanNumbers[romanNumberString[i]]!;
 
       if (previousNumber < currentNumber) {
         result -= previousNumber;
